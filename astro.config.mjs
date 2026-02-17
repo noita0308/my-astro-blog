@@ -7,6 +7,6 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://noita0308.github.io',
-	base: '/my-astro-blog'
+	base: '/my-astro-blog',
 	integrations: [mdx(), sitemap()],
 });
