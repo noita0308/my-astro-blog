@@ -1,0 +1,12 @@
+{
+	"extends": "astro/tsconfigs/strictest",
+	"compilerOptions": {
+		"ignoreDeprecations": "6.0",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"]
+		}
+	},
+	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"]
+}
