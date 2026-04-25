@@ -9,6 +9,8 @@ interface Props {
 const { nextUrl, prevUrl } = Astro.props;
 ---
 
+{/* ページネーションのコンポーネント。前のページと次のページへのリンクを受け取って、表示するだけのシンプルなもの。 */}
+
 {
 	(prevUrl || nextUrl) && (
 		<nav class="mt-8 flex items-center gap-x-4">

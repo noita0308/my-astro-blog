@@ -13,4 +13,6 @@ const postDate = getFormattedDate(date, dateTimeOptions);
 const ISO = date.toISOString();
 ---
 
+{/* 日付を表示するコンポーネント。日付を受け取って、フォーマットして表示するだけのシンプルなもの。 */}
+
 <time datetime={ISO} title={ISO} {...attrs}>{postDate}</time>
