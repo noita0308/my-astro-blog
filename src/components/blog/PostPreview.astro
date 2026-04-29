@@ -9,13 +9,25 @@ type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
 };
 
 const { as: Tag = "div", post, withDesc = false } = Astro.props;
+// URLの末尾スラッシュの事故を防ぐため、ベースURLを整理
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <FormattedDate class="text-muted min-w-30 font-semibold" date={post.data.publishDate} />
 <Tag>
-	{post.data.draft && <span class="text-red-500">(Draft) </span>}
-	<a class="cactus-link" href={`${import.meta.env.BASE_URL}posts/${post.id}/`}>
-		{post.data.title}
-	</a>
+{
+        post.data.draft ? (
+            /* draftがtrueの時：リンクなしのテキスト */
+            <span class="text-muted italic">
+                <span class="text-red-500">(Draft) </span>
+                {post.data.title}
+            </span>
+        ) : (
+            /* draftがfalseの時：通常通りのリンク */
+            <a class="cactus-link" href={`${baseUrl}/posts/${post.id}/`} rel="prefetch">
+                {post.data.title}
+            </a>
+        )
+    }
 </Tag>
 {withDesc && <q class="line-clamp-3 italic">{post.data.description}</q>}
