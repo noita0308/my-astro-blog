@@ -4,7 +4,6 @@ description: "This post showcases using the markdown admonition feature in Astro
 publishDate: "25 Aug 2024"
 updatedDate: "4 July 2025"
 tags: ["markdown", "admonitions"]
-draft: false
 ---
 
 ## What are admonitions
