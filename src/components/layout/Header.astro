@@ -10,7 +10,7 @@ import { siteConfig } from "../../site.config";
 		<a
 			aria-current={Astro.url.pathname === "/" ? "page" : false}
 			class="inline-flex items-center sm:relative sm:inline-block sm:grayscale sm:hover:filter-none"
-			href="/"
+			href={import.meta.env.BASE_URL}
 		>
 			<svg
 				aria-hidden="true"
